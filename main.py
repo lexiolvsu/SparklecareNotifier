@@ -23,18 +23,20 @@ while True:
     # Find the div element with class "latest"
     latest_div = soup.find('div', {'class': 'latest'})
     
-    # Calculate the hash of the current content
-    current_hash = hashlib.sha256(latest_div.encode()).hexdigest()
-    
-    # Check if the content has changed
-    if current_hash != previous_hash:
-        # Create a notification
-        toaster.show_toast("New Sparklecare Update!",
-                           "The main page now indicates a new update!",
-                           duration=10)
+    # Check if the "latest_div" is found
+    if latest_div is not None:
+        # Calculate the hash of the current content
+        current_hash = hashlib.sha256(latest_div.encode()).hexdigest()
         
-        # Update the previous hash
-        previous_hash = current_hash
+        # Check if the content has changed
+        if current_hash != previous_hash:
+            # Create a notification
+            toaster.show_toast("Latest Update Available!",
+                               "A new update is available!",
+                               duration=10)
+            
+            # Update the previous hash
+            previous_hash = current_hash
     
     # Wait for some time before checking again (e.g., 1 hour)
-    time.sleep(1000)
+    time.sleep(1600)
