@@ -39,4 +39,4 @@ while True:
             previous_hash = current_hash
     
     # Wait for some time before checking again (e.g., 1 hour)
-    time.sleep(1600)
+    time.sleep(60)
