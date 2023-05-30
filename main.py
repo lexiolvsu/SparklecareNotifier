@@ -31,8 +31,9 @@ while True:
         # Check if the content has changed
         if current_hash != previous_hash:
             # Create a notification
-            toaster.show_toast("Latest Update Available!",
-                               "A new update is available!",
+            print("The content of the latest div on sparklecarehospital.com has changed")
+            toaster.show_toast("New Update Available",
+                               "A new update is available, as indicated on the Sparklecare homepage.",
                                duration=10)
             
             # Update the previous hash
@@ -40,3 +41,4 @@ while True:
     
     # Wait for some time before checking again (e.g., 1 hour)
     time.sleep(60)
+
